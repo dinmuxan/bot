@@ -5,11 +5,18 @@
     <title>Prank Audio</title>
 </head>
 <body>
-    <audio autoplay>
-        <source src="https://raw.githubusercontent.com/dinmuxan/bot/main/wWjkxg8bxfHRMQ8oRrr4+GeHRS9QExBg.m4a" type="audio/m4a">
-        Sizning brauzeringiz audio tegini qo‘llab-quvvatlamaydi.
-    </audio>
+    <audio id="prankAudio" src="https://raw.githubusercontent.com/dinmuxan/bot/main/wWjkxg8bxfHRMQ8oRrr4+GeHRS9QExBg.m4a"></audio>
+
+    <script>
+        const audio = document.getElementById('prankAudio');
+        audio.play().catch(() => {
+            // Agar autoplay bloklansa, tugma ko‘rsat
+            const btn = document.createElement('button');
+            btn.innerText = 'Audio’ni boshlash';
+            btn.onclick = () => audio.play();
+            document.body.appendChild(btn);
+        });
+    </script>
 </body>
 </html>
-
 
